@@ -55,3 +55,70 @@ int main()
 
    return 0;
 }
+
+
+
+ANOTHER EXAMPLE OF THE SAME TYPE CODEIS : 
+// WAP  TO CONVERT THE POLAR COORDINATE floatO CARTESIAN  
+ 
+ #include <iostream>
+#include <cmath> 
+
+using namespace std;
+class polar;
+class cartesian
+{
+  float x;
+   float y;
+  public:
+       cartesian()
+       {
+        x=0;
+        y=0;
+       }
+      cartesian (float a, float b)
+      {
+       x=a;
+       y=b;
+      } 
+      void show ()
+      { 
+        cout << " the coordinates are : " << x << " \t " <<  y<< endl;
+      }
+};
+class polar 
+{
+  float  rad;
+  float ang;
+  public: 
+      polar()
+      {
+        rad=0;
+        ang=0;
+
+      }
+      polar (float a, float b)
+      {
+        rad =a;
+        ang = b;
+      }
+      operator cartesian()
+      {
+        float radian= ang * 2*3.14/180;
+        float c = rad * cos(radian);
+        float d= rad * sin(radian);
+        return cartesian(c,d);
+      }
+      
+};
+
+int main() 
+
+{
+   polar p(3,60);
+ 
+   cartesian c = p;
+   c.show();
+  
+   return 0;
+}
