@@ -56,3 +56,78 @@ int main()
 
    return 0;
 }
+
+
+ANOTHER EXAMPLE ::
+
+// WAP  TO CONVERT THE POLAR COORDINATE INTO CARTESIAN  
+ 
+ #include <iostream>
+#include <cmath> 
+
+using namespace std;
+class cartesian;
+class polar 
+{
+  int  rad;
+  int ang;
+  public: 
+      polar()
+      {
+        rad=0;
+        ang=0;
+
+      }
+      polar (int a, int b)
+      {
+        rad =a;
+        ang = b;
+      }
+      int getrad()
+      {
+        return rad;
+      }
+      int getang()
+      {
+        return ang;
+      }
+      void see()
+      {
+        cout << " the polar coordinates are : " << rad <<  " \t " << ang << endl;
+      }
+};
+
+class cartesian
+{
+  int x;
+   int y;
+  public:
+       cartesian()
+       {
+        x=0;
+        y=0;
+       }
+      cartesian (polar p)
+      {
+        float radian = p.getang() * 3.14/180;
+        x= p.getrad() * cos(radian);
+        y= p.getrad() * sin(radian);
+      } 
+      void show ()
+      { 
+        cout << " the coordinates are : " << x << " \t " <<  y<< endl;
+      }
+};
+
+int main() 
+
+{
+   polar p(3,60);
+ 
+   cartesian c = p;
+   c.show();
+  
+   
+
+   return 0;
+}
