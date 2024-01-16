@@ -1,1 +1,35 @@
 
+#include<iostream>
+using namespace std; 
+
+class  celcius
+{
+  int cel;
+  public : 
+   celcius (int s)
+   {
+    cel = s;
+   }
+   operator float ()
+   {
+    float fer;
+    fer =  (cel *9/5) + 32 ;
+    return (fer);
+   }
+   void show();
+};
+void celcius :: show()
+{
+  cout << " temperature in celcius  is : " << cel << endl;
+}
+
+int main() 
+
+{
+   celcius cel(45 ) ;
+   float fer;
+   cel.show();
+    fer = cel;
+   cout << " the temperature in fahrenheit is : " << fer << endl;
+     return 0;
+}
