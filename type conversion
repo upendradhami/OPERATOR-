@@ -1,0 +1,57 @@
+#include<iostream>
+using namespace std; 
+
+class rectangle
+{
+  int l,b;
+  float area;
+  public : 
+  rectangle (int length , int breadth)
+  {
+    l = length;
+    b = breadth;
+    area = l*b;
+
+  }
+  void show()
+  {
+     cout <<" \n length " << l << " \n breadth " << b << "\n area of rectangle  :" << area << endl;
+
+  }
+};
+
+class triangle 
+{
+  int b ,h;
+  float area;
+  public: 
+   triangle(int base, int height)
+   {
+    b= base;
+    h= height ;
+    area = 0.5 * b * h;
+   }
+   void showot()
+   {
+         cout <<" \n base " << b << " \nheight  " << h << "\n area of triangle  :" << area << endl;
+
+   }
+   operator rectangle()
+   {
+    rectangle rect(b,h);
+    return rect;
+   }
+};
+
+
+
+int main() 
+
+{
+   triangle t(45,80);
+   rectangle r=t;
+   t.showot();
+   r.show();
+
+   return 0;
+}
