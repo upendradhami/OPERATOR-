@@ -1,0 +1,45 @@
+//  WAP to add two complex numbers using the concept of operator overloading 
+#include<iostream>
+using namespace std; 
+
+class complex
+{
+    int a ,b;
+    public : 
+       complex()
+       {
+         a=0;
+         b=0;
+       }
+       complex(int x, int y)
+       {
+        a=x;
+        b=y;
+       }
+       complex operator +(complex c);
+       void display()
+       {
+        cout << a << " +i" << b << endl;
+       }
+
+};
+
+ complex complex :: operator +(complex c)
+ {
+    complex temp;
+    temp.a = a +c.a;
+    temp.b = b +c.b;
+    return (temp) ;
+ }
+int main() 
+
+{
+    complex c1(4,6), c2(7,8) ,c3;
+    c1.display();
+    c2.display();
+    c3= c1 + c2;
+    
+    c3.display();
+
+      return 0;
+}
