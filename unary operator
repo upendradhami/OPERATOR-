@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std; 
+class num
+{
+    int count ;
+    public: 
+     num()
+     {
+         count = 0;
+     }
+     int operator ++( );
+     void display();
+};
+
+int num :: operator ++( )
+{
+    ++ count;
+}
+
+void num :: display()
+{
+    cout << " the count for is : " << count  << endl;
+}
+
+int main() 
+
+{
+   num n1, n2;
+   n1.display();
+   n2.display();
+   ++n1;
+   ++n2; 
+   n1.display();
+   n2.display();
+
+   return 0;
+}
